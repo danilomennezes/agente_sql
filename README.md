@@ -7,14 +7,13 @@ Passo 1: Criação das Tabelas no Banco de Dados.
 •	Em seguida, crie as tabelas necessárias utilizando os seguintes comandos SQL:
 
 
--- Tabela de clientes
+
 CREATE TABLE clientes (
     id_cliente SERIAL PRIMARY KEY,
     nome VARCHAR(100),
     saldo DECIMAL(10, 2)
 );
 
--- Tabela de produtos
 CREATE TABLE produtos (
     id_produto SERIAL PRIMARY KEY,
     nome VARCHAR(100),
@@ -22,7 +21,6 @@ CREATE TABLE produtos (
     estoque INT
 );
 
--- Tabela de transações
 CREATE TABLE transacoes (
     id_transacao SERIAL PRIMARY KEY,
     id_cliente INT REFERENCES clientes(id_cliente),
@@ -36,7 +34,6 @@ Passo 2: Inserção de Dados nas Tabelas.
 
 •	Após a criação das tabelas, insira os dados de exemplo utilizando os seguintes comandos SQL:
 
--- Inserindo dados na tabela clientes
 INSERT INTO clientes (nome, saldo) VALUES
 ('Maria Oliveira', 1200.00),
 ('Carlos Silva', 750.50),
@@ -44,15 +41,12 @@ INSERT INTO clientes (nome, saldo) VALUES
 ('Ricardo Lima', 550.75),
 ('Juliana Pereira', 1300.00);
 
--- Inserindo dados na tabela produtos
 INSERT INTO produtos (nome, preco, estoque) VALUES
 ('Notebook', 5000.00, 20),
 ('Smartphone', 7000.00, 15),
 ('Teclado', 450.00, 50),
 ('Monitor', 2200.00, 30),
 ('Fone de Ouvido', 1500.00, 25);
-
--- Inserindo dados na tabela transações
 
 INSERT INTO transacoes (id_cliente, id_produto, data_transacao, quantidade, valor_transacao) VALUES
 (1, 1, '2025-03-01 10:15:00', 1, 5000.00),
