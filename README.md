@@ -1,7 +1,11 @@
 Instruções para Rodar a Aplicação
+
 Passo 1: Criação das Tabelas no Banco de Dados.
+
 •	Crie o banco de dados vendas_db no PostgreSQL.
+
 •	Em seguida, crie as tabelas necessárias utilizando os seguintes comandos SQL:
+
 
 -- Tabela de clientes
 CREATE TABLE clientes (
@@ -29,6 +33,7 @@ CREATE TABLE transacoes (
 );
 
 Passo 2: Inserção de Dados nas Tabelas.
+
 •	Após a criação das tabelas, insira os dados de exemplo utilizando os seguintes comandos SQL:
 
 -- Inserindo dados na tabela clientes
@@ -48,6 +53,7 @@ INSERT INTO produtos (nome, preco, estoque) VALUES
 ('Fone de Ouvido', 1500.00, 25);
 
 -- Inserindo dados na tabela transações
+
 INSERT INTO transacoes (id_cliente, id_produto, data_transacao, quantidade, valor_transacao) VALUES
 (1, 1, '2025-03-01 10:15:00', 1, 5000.00),
 (2, 2, '2025-03-02 14:30:00', 2, 14000.00),
@@ -62,17 +68,25 @@ INSERT INTO transacoes (id_cliente, id_produto, data_transacao, quantidade, valo
 
 
 Passo 3: Instalação das Dependências.
+
 pip install langchain, langchain.openai, psycopg, psycopg2, langchain_community, langgraph
 
 
 Passo 4: Configuração das Variáveis de Ambiente.
+
 •	Para instalar as dependências necessárias, abra o terminal e execute o seguinte comando:
 
 $env:token_openai = "insira seu token aqui"
+
 $env:senha_pgadmin = "insira a senha do banco aqui"
+
 $env:usuario_pgadmin = "insira o login do banco aqui"
 
+
 Passo 5: Execução do Código.
+
 •	Abra o PyCharm ou sua IDE preferida.
+
 •	Abra o arquivo agent_sql.py no seu projeto.
+
 •	Abra o terminal e execute o seguinte comando: python agent_sql.py
